@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        {% for news in context %}
+        <th>Заголовок</th> <th>Описание</th> <th>Дата</th>
+        <tr>
+            <td> {{ news.heading }}</td>
+            <td> {{ news.descr }}</td>
+            <td> {{ news.date }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
