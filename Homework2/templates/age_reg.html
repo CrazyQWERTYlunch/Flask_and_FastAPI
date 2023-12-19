@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Задание 6{% endblock title %}
+
+{% block content %}
+
+{% if name and result %}
+{{ name }}, вы ввели {{ result }}
+{% else %}
+    <p>Введите имя и возраст</p>
+    <form method=post>
+
+        <label for="nameInput" class="form-label">Ваше имя</label>
+        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Имя">
+
+        <label for="ageInput" class="form-label">Возраст</label>
+        <input type="number" class="form-control" id="ageInput" aria-describedby="ageHelp" name="age" placeholder="Возраст">
+
+        <div id="ageHelp" class="form-text">Возраст должен быть целым числом больше 18</div>
+
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Задание 7{% endblock title %}
+
+{% block content %}
+    {% if result %}
+        {{ result }}
+    {% endif %}
+
+    <form method=post>
+            <label for="ageInput" class="form-label">Число</label>
+            <input type="number" class="form-control" id="ageInput" aria-describedby="ageHelp" name="number" step="0.001">
+            <div id="ageHelp" class="form-text">Ввод должен быть числом</div>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock content %}
