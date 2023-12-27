@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Сайт {% endblock title %}</title>
+
+</head>
+<body class="d-flex flex-column h-100">
+
+{% block navbar %}
+{% endblock navbar %}
+
+{% block content %}
+{% endblock content %}
+    </main>
+    <footer>
+        {% block footcont%}
+        {% endblock footcont%}
+    </footer>
+</body>
+</html>
+

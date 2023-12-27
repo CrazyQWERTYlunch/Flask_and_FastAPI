@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Задание 5
+{% endblock title %}
+
+{% block content %}
+{% if form_notifications %}
+<ul>
+    {% for notification in form_notifications %}
+    <li>{{ notification }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form method="POST" action="{{ url_for('index') }}" class="m-3">
+    {{ form.csrf_token }}
+    <h3>Sign up</h3>
+    {% for field in form if field.name != 'csrf_token' and field.name != 'data_access' %}
+    <div>
+        {{ field(class_='form-control', placeholder_='Ввод') }}
+        {{ field.label }}
+        {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <div>
+        {{ form.data_access.label(class_='form-check-label') }}
+        {{ form.data_access(class_='form-check-input') }}
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign up</button>
+</form>
+{% endblock content %}
