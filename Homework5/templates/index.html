@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №5</title>
+</head>
+<body>
+    <h1>Книги:</h1>
+    {% for book in books %}
+        <p><h2>Название: {{ book.name }}</h2></p>
+        <p><b>Автор: {{ books.author }}</b></p>
+        {% if book.description %}
+        <div>
+            Описание: {{ book.description }}
+        </div>
+        {% endif %}
+        <p><i>Жанр: {{ book.price }}</i></p>
+        <a href="/books/{{ book.id }}"><h3>Перейти</h3></a>
+    {% endfor %}
+</body>
+</html>

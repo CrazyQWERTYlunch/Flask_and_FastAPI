@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашнее задание №5</title>
+</head>
+<body>
+    {% if book %}
+    <h1>Название: {{ book.name }}</h1>
+    <p><b>Автор: {{ book.author }}</b></p>
+    {% if book.description %}
+    Описание:
+    <div>
+        {{ book.description }}
+    </div>
+    {% endif %}
+    <i>Цена: {{ book.price }}</i>
+    {% else %}
+    <h1>Книга не найдена!</h1>
+    {% endif %}
+
+    <a href="/"><h2>На главную</h2></a>
+</body>
+</html>
